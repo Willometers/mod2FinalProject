@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import FavoritesContainer from './components/SearchContainer';
+import SearchContainer from './components/SearchContainer';
 
 const URL = 'https://dictionaryapi.com/api/v3/references/collegiate/json/'
 const key = '?key=99b4ce5d-7ca7-4258-90a4-39b4171e5d4a'
