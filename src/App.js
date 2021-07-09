@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import FavoritesContainer from './components/FavoritesContainer';
+import FavoritesContainer from './components/SearchContainer';
 
 const URL = 'https://dictionaryapi.com/api/v3/references/collegiate/json/'
 const key = '?key=99b4ce5d-7ca7-4258-90a4-39b4171e5d4a'
-let keyWord = "container"
+let searchWord = "container"
 
 class App extends Component {
 
@@ -12,7 +12,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-      fetch(URL+`${keyWord}`+key)
+      fetch(URL+`${searchWord}`+key)
       .then(res => res.json())
       .then(words => this.setState({allWords: words}))
     }
@@ -20,7 +20,7 @@ class App extends Component {
     render() {
       return(
         <div>
-          < FavoritesContainer allWords={this.state.allWords}/>
+          < SearchContainer allWords={this.state.allWords}/>
         </div>
       )
     }
