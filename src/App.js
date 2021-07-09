@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import FavoritesContainer from './components/FavoritesContainer';
 
-const URL='https://dictionaryapi.com/api/v3/references/collegiate/json/test?key=99b4ce5d-7ca7-4258-90a4-39b4171e5d4a'
+const URL = 'https://dictionaryapi.com/api/v3/references/collegiate/json/'
+const key = '?key=99b4ce5d-7ca7-4258-90a4-39b4171e5d4a'
+let keyWord = "container"
 
 class App extends Component {
 
@@ -10,7 +12,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-      fetch(URL)
+      fetch(URL+`${keyWord}`+key)
       .then(res => res.json())
       .then(words => this.setState({allWords: words}))
     }

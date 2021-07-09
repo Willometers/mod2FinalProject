@@ -5,7 +5,7 @@ class WordCard extends Component {
     render() {
         return (
           <div className="card">
-            <h2>{this.props.word.shortdef}</h2>
+            <h2>{this.props.word.meta.id}</h2>
           </div>
         );
       }
