@@ -2,11 +2,17 @@ import React, { Component } from 'react'
 
 class SearchForm extends Component {
 
+    handleClick = (e) => {
+        e.preventDefault()
+        console.log('Search')
+    
+    }
+
     render() {
         return(
             <div className="search-bar">
                 <form className="search-form"
-                    onSubmit>
+                    onSubmit={this.handleClick}>
 
                     <input type='text' name='word' placeholder='enter word here' className='input-text'
                         onChange> 
@@ -21,8 +27,6 @@ class SearchForm extends Component {
             </div>
         )
     }
-
-
 
 }
 
