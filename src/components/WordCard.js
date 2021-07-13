@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { Card } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 class WordCard extends Component {
 
@@ -9,22 +12,28 @@ class WordCard extends Component {
 
     render() {
         return (
-        <form>
-            
-          <div className="card">
-            <h3>{this.props.word.meta.id}</h3>
-                <ul>
-                    <li>{this.props.word.shortdef}</li>
-                    <li>{this.props.word.date}</li>
-                    <li>{this.props.word.hwi.hw}</li>
-                </ul>
-            <button type='submit' name='submit' value='Add' className='submit'
-                onClick={this.handleCLick}>Add Word</button>
-          </div>
-          </form>
-        );
-      }
-    
+        <div>
+            <Container>
+            <Row>
+            <Col>
+            <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                    <Card.Title>{this.props.word.meta.id}</Card.Title>
+                    <Card.Text>
+                    <ul>
+                        <li>Defintiion: {this.props.word.shortdef}</li>
+                        <li>Origin: {this.props.word.date}</li>
+                    </ul>
+                    </Card.Text>
+                < Button variant="primary" onClick={this.handleCLick}>Add</Button>
+                </Card.Body>
+            </Card>
+            </Col>
+            </Row>
+            </Container>
+        </div>
+        )
     }
-
+}
+    
 export default WordCard
