@@ -38,7 +38,6 @@ class SearchForm extends Component {
                     name='submit' 
                     value='Search' 
                     className='submit'
-                    
                     ></input>
 
                 </form>

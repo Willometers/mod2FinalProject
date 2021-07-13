@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { Component } from 'react'
 import WordCard from './WordCard'
-
 
 const SearchContainer = (props) => {
 

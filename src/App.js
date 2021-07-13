@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchContainer from './components/SearchContainer';
 import SearchForm from './components/SearchForm';
-import FavoriteContainer from './components/FavoriteContainer';
+import FavoriteCard from './components/FavoriteCard';
 
 
 const URL = 'https://dictionaryapi.com/api/v3/references/collegiate/json/'
@@ -12,14 +12,13 @@ class App extends Component {
 
   handleSubmit = (input) => {
     this.setState(input)
-    this.componentDidMount()
   }
     state = {
       allWords: [],
       input: ""
     }
 
-    componentDidMount() {
+    componentDidUpdate() {
       let searchWord = this.state.input
       fetch(URL+`${searchWord}`+key)
       .then(res => res.json())
@@ -29,12 +28,12 @@ class App extends Component {
     render() {
       return(
         <div>
-          <h1> Dictionary </h1>
+          <img src="https://dictionaryapi.com/images/MWLogo_120x120_2x.png"></img>
           < SearchForm handleSubmit={this.handleSubmit}/>
           <h2> Results: </h2>
           < SearchContainer allWords={this.state.allWords}/>
           <h2> Favorites: </h2>
-          < FavoriteContainer /> 
+          < FavoriteCard /> 
         </div>
       )
     }

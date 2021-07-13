@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { Container, Row, Col } from 'react-bootstrap'
 
-class FavoriteContainer extends Component {
+class FavoriteCard extends Component {
 
     handleCLick = (e) => {
         e.preventDefault()
@@ -18,15 +18,14 @@ class FavoriteContainer extends Component {
             <Col>
             <Card style={{ width: '18rem' }}>
                 <Card.Body>
-                    <Card.Title>adgfvsd</Card.Title>
+                    <Card.Title>Pace Holder</Card.Title>
                     <Card.Text>
                     <ul>
-                        <li>adgf</li>
-                        <li>dfgs</li>
-                        <li>sdfb</li>
+                        <li>Pace Holder</li>
+                        <li>Pace Holder</li>
                     </ul>
                     </Card.Text>
-                < Button variant="primary" onClick={this.handleCLick}>Add</Button>
+                < Button variant="primary" onClick={this.handleCLick}>Delete</Button>
                 </Card.Body>
             </Card>
             </Col>
@@ -37,4 +36,4 @@ class FavoriteContainer extends Component {
     }
 }
 
-export default FavoriteContainer
+export default FavoriteCard

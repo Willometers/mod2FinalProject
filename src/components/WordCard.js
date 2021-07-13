@@ -20,10 +20,14 @@ class WordCard extends Component {
                 <Card.Body>
                     <Card.Title>{this.props.word.meta.id}</Card.Title>
                     <Card.Text>
-                    <ul>
-                        <li>Defintiion: {this.props.word.shortdef}</li>
-                        <li>Origin: {this.props.word.date}</li>
-                    </ul>
+                        Defintion:
+                        <ul>
+                            {this.props.word.shortdef.map(def => <li>{def}</li>)}
+                        </ul>
+                        Origin:
+                        <ul>
+                            <li>{this.props.word.date}</li>
+                        </ul>
                     </Card.Text>
                 < Button variant="primary" onClick={this.handleCLick}>Add</Button>
                 </Card.Body>
