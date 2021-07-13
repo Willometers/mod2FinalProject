@@ -15,7 +15,8 @@ class App extends Component {
   }
     state = {
       allWords: [],
-      input: ""
+      input: "",
+      savedWords: []
     }
 
     componentDidUpdate() {
@@ -25,15 +26,63 @@ class App extends Component {
       .then(words => this.setState({allWords: words}))
     }
 
+    // saveWord(word) {
+    //   let wordPost = {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json;charset=utf-8",
+    //       Accept:"application/json;charset=utf-8"
+    //     },
+    //     body: JSON.stringify(word)
+    //   }
+    //   fetch(`http://localhost:3000`, wordPost)
+    //   .then(res => res.json())
+    //   .then(word => this.setState({savedWords: word}))
+
+    // }
+
+
     render() {
       return(
         <div>
-          <img src="https://dictionaryapi.com/images/MWLogo_120x120_2x.png"></img>
-          < SearchForm handleSubmit={this.handleSubmit}/>
-          <h2> Results: </h2>
-          < SearchContainer allWords={this.state.allWords}/>
-          <h2> Favorites: </h2>
-          < FavoriteCard /> 
+        <div style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+            }}>
+            <img src="https://dictionaryapi.com/images/MWLogo_120x120_2x.png" alt="logo" ></img>
+          </div>
+          <div style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+            }}>
+            < SearchForm handleSubmit={this.handleSubmit}/>
+          </div>
+          <h3 style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+            }}> Search Results: </h3>
+          <div style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+            }}>
+            < SearchContainer allWords={this.state.allWords}/>
+          </div>
+          <h3 style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+            }}> Favorites: </h3>
+            <div style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+            }}>
+            < FavoriteCard saveWord={this.saveWord}/> 
+          </div>
         </div>
       )
     }

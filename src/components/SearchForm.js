@@ -28,7 +28,7 @@ class SearchForm extends Component {
                 >
                     <input type='text' 
                     name='word' 
-                    placeholder='enter word here' 
+                    placeholder='look up word here' 
                     className='input-text'
                     onChange={(e) => this.stateChange(e.target.value)}
                     ></input>

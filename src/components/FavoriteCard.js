@@ -18,11 +18,11 @@ class FavoriteCard extends Component {
             <Col>
             <Card style={{ width: '18rem' }}>
                 <Card.Body>
-                    <Card.Title>Pace Holder</Card.Title>
+                    <Card.Title>Place Holder</Card.Title>
                     <Card.Text>
                     <ul>
-                        <li>Pace Holder</li>
-                        <li>Pace Holder</li>
+                        <li>Place Holder</li>
+                        <li>Place Holder</li>
                     </ul>
                     </Card.Text>
                 < Button variant="primary" onClick={this.handleCLick}>Delete</Button>

@@ -3,6 +3,7 @@ import { Card } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { Container, Row, Col } from 'react-bootstrap'
 
+
 class WordCard extends Component {
 
     handleCLick = (e) => {
@@ -13,6 +14,7 @@ class WordCard extends Component {
     render() {
         return (
         <div>
+            
             <Container>
             <Row>
             <Col>
@@ -35,6 +37,7 @@ class WordCard extends Component {
             </Col>
             </Row>
             </Container>
+           
         </div>
         )
     }
