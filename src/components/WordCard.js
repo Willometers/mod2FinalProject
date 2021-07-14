@@ -42,4 +42,4 @@ class WordCard extends Component {
     }
 }
     
-export default WordCard
+export default WordCard;
