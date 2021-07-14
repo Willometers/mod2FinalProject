@@ -27,17 +27,17 @@ class SearchForm extends Component {
                 onSubmit={this.handleClick}
                 >
                     <input type='text' 
-                    name='word' 
-                    placeholder='look up word here' 
-                    className='input-text'
-                    onChange={(e) => this.stateChange(e.target.value)}
+                        name='word' 
+                        placeholder='look up word here' 
+                        className='input-text'
+                        onChange={(e) => this.stateChange(e.target.value)}
                     ></input>
 
                     <input 
-                    type='submit' 
-                    name='submit' 
-                    value='Search' 
-                    className='submit'
+                        type='submit' 
+                        name='submit' 
+                        value='Search' 
+                        className='submit'
                     ></input>
 
                 </form>

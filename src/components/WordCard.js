@@ -3,7 +3,6 @@ import { Card } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { Container, Row, Col } from 'react-bootstrap'
 
-
 class WordCard extends Component {
 
     handleCLick = (e) => {

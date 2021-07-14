@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchContainer from './components/SearchContainer';
 import SearchForm from './components/SearchForm';
-import FavoriteCard from './components/FavoriteCard';
+import FavoriteContainer from './components/FavoriteCard';
 
 
 const URL = 'https://dictionaryapi.com/api/v3/references/collegiate/json/'
@@ -13,10 +13,10 @@ class App extends Component {
   handleSubmit = (input) => {
     this.setState(input)
   }
+
     state = {
       allWords: [],
       input: "",
-      savedWords: []
     }
 
     componentDidUpdate() {
@@ -26,31 +26,15 @@ class App extends Component {
       .then(words => this.setState({allWords: words}))
     }
 
-    // saveWord(word) {
-    //   let wordPost = {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json;charset=utf-8",
-    //       Accept:"application/json;charset=utf-8"
-    //     },
-    //     body: JSON.stringify(word)
-    //   }
-    //   fetch(`http://localhost:3000`, wordPost)
-    //   .then(res => res.json())
-    //   .then(word => this.setState({savedWords: word}))
-
-    // }
-
-
     render() {
       return(
         <div>
-        <div style={{
+          <div style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center"
             }}>
-            <img src="https://dictionaryapi.com/images/MWLogo_120x120_2x.png" alt="logo" ></img>
+            <img src="https://dictionaryapi.com/images/MWLogo_120x120_2x.png" alt="mw-logo" ></img>
           </div>
           <div style={{
             display: "flex",
@@ -76,12 +60,12 @@ class App extends Component {
             justifyContent: "center",
             alignItems: "center"
             }}> Favorites: </h3>
-            <div style={{
+          <div style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center"
             }}>
-            < FavoriteCard saveWord={this.saveWord}/> 
+            < FavoriteContainer saveWord={this.saveWord}/> 
           </div>
         </div>
       )

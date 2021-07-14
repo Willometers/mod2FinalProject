@@ -1,39 +1,20 @@
-import React, { Component } from 'react'
-import { Card } from 'react-bootstrap'
-import { Button } from 'react-bootstrap'
-import { Container, Row, Col } from 'react-bootstrap'
+import React from 'react'
+import WordCard from './WordCard'
 
-class FavoriteCard extends Component {
 
-    handleCLick = (e) => {
-        e.preventDefault()
-        console.log("word added")
-    }
+const FavoriteContainer = (props) => {
 
-    render() {
-        return (
-        <div>
-            <Container>
-            <Row>
-            <Col>
-            <Card style={{ width: '18rem' }}>
-                <Card.Body>
-                    <Card.Title>Place Holder</Card.Title>
-                    <Card.Text>
-                    <ul>
-                        <li>Place Holder</li>
-                        <li>Place Holder</li>
-                    </ul>
-                    </Card.Text>
-                < Button variant="primary" onClick={this.handleCLick}>Delete</Button>
-                </Card.Body>
-            </Card>
-            </Col>
-            </Row>
-            </Container>
-        </div>
-        )
-    }
-}
+    return(
+      <div className="word-collection">
+        {props.allWords.map(word => {
+         return (
 
-export default FavoriteCard
+        < WordCard key={word.meta.sort} word={word}/>
+
+        )})} 
+      </div>
+    );
+
+  }
+
+export default FavoriteContainer;
