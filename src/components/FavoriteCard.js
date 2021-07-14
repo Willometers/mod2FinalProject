@@ -6,7 +6,7 @@ const FavoriteContainer = (props) => {
 
     return(
       <div className="word-collection">
-        {props.allWords.map(word => {
+        {props.savedWords.map(word => {
          return (
 
         < WordCard key={word.meta.sort} word={word}/>

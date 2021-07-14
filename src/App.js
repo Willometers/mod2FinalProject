@@ -12,64 +12,45 @@ class App extends Component {
 
   handleSubmit = (input) => {
     this.setState(input)
+    console.log(input)
   }
 
-    state = {
-      allWords: [],
-      input: "",
-    }
+  state = {
+    allWords: [],
+    input: "",
+    savedWords: [],
+  }
 
-    componentDidUpdate() {
-      let searchWord = this.state.input
-      fetch(URL+`${searchWord}`+key)
-      .then(res => res.json())
-      .then(words => this.setState({allWords: words}))
-    }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.input !== this.state.input) {
+    let searchWord = this.state.input
+    console.log('SW', searchWord)
+    fetch(URL+`${searchWord}`+key)
+    .then(res => res.json())
+    .then(words => this.setState({allWords: words}))
+  }
+}
 
-    render() {
-      return(
+  render() {
+    return(
+      <div>
         <div>
-          <div style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-            }}>
-            <img src="https://dictionaryapi.com/images/MWLogo_120x120_2x.png" alt="mw-logo" ></img>
-          </div>
-          <div style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-            }}>
-            < SearchForm handleSubmit={this.handleSubmit}/>
-          </div>
-          <h3 style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-            }}> Search Results: </h3>
-          <div style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-            }}>
-            < SearchContainer allWords={this.state.allWords}/>
-          </div>
-          <h3 style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-            }}> Favorites: </h3>
-          <div style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-            }}>
-            < FavoriteContainer saveWord={this.saveWord}/> 
-          </div>
+          <img src="https://dictionaryapi.com/images/MWLogo_120x120_2x.png" alt="mw-logo" ></img>
         </div>
-      )
-    }
+        <div>
+          < SearchForm handleSubmit={this.handleSubmit}/>
+        </div>
+          <h3> Search Results: </h3>
+        <div>
+          < SearchContainer allWords={this.state.allWords}/>
+        </div>
+          <h3> Favorites: </h3>
+        <div>
+          < FavoriteContainer savedWords={this.state.savedWords}/> 
+        </div>
+      </div>
+    )
+  }
 }
 
 export default App;
